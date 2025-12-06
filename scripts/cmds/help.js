@@ -30,7 +30,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += ``; 
+      msg += ``;
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -57,12 +57,13 @@ module.exports = {
       const totalCommands = commands.size;
       msg += `\n\n⭔Bot has ${totalCommands} commands\n⭔Type ${prefix}𝐡𝐞𝐥𝐩 <𝚌𝚘𝚖𝚖𝚊𝚗𝚍 𝚗𝚊𝚖𝚎> to learn Usage.\n`;
       msg += ``;
-      msg += `\n╭─✦ADMIN: MahMUD彡\n├‣ FACEBOOK\n╰‣:m.me/mahmud0x7`; // customize this section if needed
+
+      // UPDATED ADMIN INFO
+      msg += `\n╭─✦ADMIN: Sanjida Snigdha彡\n├‣ FACEBOOK\n╰‣: facebook.com/Sanjida8037`;
 
       try {
         const hh = await message.reply({ body: msg });
 
-        // Automatically unsend the message after 30 seconds
         setTimeout(() => {
           message.unsend(hh.messageID);
         }, 80000);
@@ -87,11 +88,11 @@ module.exports = {
         const guideBody = configCommand.guide?.en || "No guide available.";
         const usage = guideBody.replace(/{he}/g, prefix).replace(/{lp}/g, configCommand.name);
 
-        const response = `╭─────────⭓\n│ 🎀 NAME: ${configCommand.name}\n│ 📃 Aliases: ${configCommand.aliases ? configCommand.aliases.join(", ") : "Do not have"}\n├──‣ INFO\n│ 📝 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻: ${longDescription}\n│ 👑 𝗔𝗱𝗺𝗶𝗻: 𝐌𝐚𝐡𝐌𝐔𝐃\n│ 📚 𝗚𝘂𝗶𝗱𝗲: ${usage}\n├──‣ Usage\n│ ⭐ 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: ${configCommand.version || "1.0"}\n│ ♻️ 𝗥𝗼𝗹𝗲: ${roleText}\n╰────────────⭓`;
+        const response = `╭─────────⭓\n│ 🎀 NAME: ${configCommand.name}\n│ 📃 Aliases: ${configCommand.aliases ? configCommand.aliases.join(", ") : "Do not have"}\n├──‣ INFO\n│ 📝 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻: ${longDescription}\n│ 👑 𝗔𝗱𝗺𝗶𝗻: 𝐒𝐚𝐧𝐣𝐢𝐝𝐚 𝐒𝐧𝐢𝐠𝐝𝐡𝐚\n│ 📚 𝗚𝘂𝗶𝗱𝗲: ${usage}\n├──‣ Usage\n│ ⭐ 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: ${configCommand.version || "1.0"}\n│ ♻️ 𝗥𝗼𝗹𝗲: ${roleText}\n╰────────────⭓`;
 
         const helpMessage = await message.reply(response);
 
-          setTimeout(() => {
+        setTimeout(() => {
           message.unsend(helpMessage.messageID);
         }, 80000);
       }
@@ -110,4 +111,4 @@ function roleTextToString(roleText) {
     default:
       return "Unknown role";
   }
-	      }
+}
